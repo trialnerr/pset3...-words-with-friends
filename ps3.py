@@ -387,9 +387,7 @@ def play_game(word_list):
                 ask_to_replay = False
                 replay_score = play_hand(hand, word_list)       
         
-        print(max(score, replay_score))
         total_score += max(score, replay_score) 
-        print(total_score)
         print("--------------------------------------------------------------")
     print("Total score", total_score)
     
