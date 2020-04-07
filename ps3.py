@@ -33,6 +33,7 @@ def load_words():
     
     print("Loading word list from file...")       
     # inFile: file
+    #this opens the WORDLIST_FILENAME in "read" mode
     inFile = open(WORDLIST_FILENAME, 'r')
     # wordlist: list of strings
     wordlist = []
@@ -364,6 +365,7 @@ def play_game(word_list):
     total_score = 0
     ask_to_substitute = True
     ask_to_replay = True
+    replay_score = 0
     while number_of_times_played < number_of_hands:     
         number_of_times_played +=1
         hand = deal_hand(HAND_SIZE)
@@ -371,6 +373,7 @@ def play_game(word_list):
         
         if ask_to_substitute: 
             to_substitute = input("Enter yes if you would like to substitute a letter ")
+        
             if to_substitute.lower() == "yes": 
                 ask_to_substitute = False
                 letter = input("Which letter would you like to substitute? ")
@@ -384,8 +387,9 @@ def play_game(word_list):
                 ask_to_replay = False
                 replay_score = play_hand(hand, word_list)       
         
-        
-        total_score = +=max(score, replay_score)
+        print(max(score, replay_score))
+        total_score += max(score, replay_score) 
+        print(total_score)
         print("--------------------------------------------------------------")
     print("Total score", total_score)
     
